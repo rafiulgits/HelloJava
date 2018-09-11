@@ -17,7 +17,9 @@ class Facebook{
     public Facebook() {
         loggedIn = false;
     }
-    
+    /**
+     * For communicate between threads methods should be under synchronization
+     */
     public synchronized void login(){
         for(int i=0; i<5; i++){
             System.out.println("Authenticating...");
@@ -30,6 +32,7 @@ class Facebook{
     public synchronized void status(){
         if(! loggedIn){
             try {
+                System.out.println("Not authenticated. Trying to log ");
                 wait();
             } catch (InterruptedException e) {
                 System.err.println("Interrupted");
@@ -46,6 +49,16 @@ public class ThreadCommunication {
         
         Facebook account = new Facebook();
         
+        
+        /**
+         * Two thread those will communicate with each other.
+         * One thread is for updating status method and another for log in.
+         * From main thread I call status thread first and after 2 sec I call log thread.
+         * When status thread will call the status method it will found that user is not
+         * authenticated and it will wait for authentication confirmation. After log thread
+         * executed it will make the log boolean true and notify the waiting thread for 
+         * it's(waiting thread) further executions.
+         */
         Thread logThread = new Thread(new Runnable(){
             public void run(){
                 account.login();
@@ -57,8 +70,15 @@ public class ThreadCommunication {
                 account.status();
             }
         });
+        statusThread.start();
+        
+        /* wait for 2000 milliseconds */
+        try{
+            Thread.sleep(2000);
+        } catch(InterruptedException ex){
+            System.err.println(ex);
+        }
         
         logThread.start();
-        statusThread.start();
     }
 }
