@@ -1,5 +1,8 @@
-# HelloJava
+<h1 align='center'> :coffee: <br>HelloJava</h1>
+
 Sample code of java language api. Collection of java codes during my object oriented programming language course.
+***
+
 ### [Java Multithreading](threading/)
   * #### [Intra-Thread Communication](threading/ThreadCommunication.java)
   * #### [Thread Executors-Thread reuse](threading/ThreadReusing.java)
@@ -13,8 +16,12 @@ Sample code of java language api. Collection of java codes during my object orie
     * ##### [Client](networking/p2p/Client.java)
   * #### [UDP Protocol](networking/casting)
     * ##### [Group Messenger](networking/casting/MulticastingGroup.java)
+    
+***
+### More about:
+Operating system programming (CPU scheduling algorithms), Software Design Pattern samples.
+***
+
 
 All codes are under MIT open sourse license
 ### Copyright (c) 2018 Rafiul Islam
-## License
-### [License under MIT Open Source](LICENSE)
