@@ -6,7 +6,7 @@ package sdp.singleton;
  */
 public class Main {
     public static void main(String[] args) {
-        DateTime dt = DateTime.init();
-        System.out.println(dt.now());
+        DateTime clock = DateTime.init();
+        System.out.println(clock.now());
     }
 }

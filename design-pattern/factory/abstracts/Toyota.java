@@ -7,10 +7,11 @@ package sdp.factory.abstracts;
 public class Toyota {
     public static final int SUV = 1;
     public static final int SEDAN = 2;
-    public static Car getCar(int type){
+    
+    public static Factory factory(int type){
         switch(type){
-            case SUV: return new SUVCar();
-            case SEDAN: return new SedanCar();
+            case SUV: return new SUVFactory();
+            case SEDAN: return new SedanFactory();
             default: return null;
         }
     }
