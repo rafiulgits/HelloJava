@@ -19,3 +19,6 @@
 ### Iterator Pattern
 ![strategy pattern](res/iterator_pattern.svg)
 ***
+### Decorator Pattern
+![strategy pattern](res/decorator_pattern.svg)
+***
